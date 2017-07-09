@@ -139,7 +139,7 @@ u_int32_t ORBSearcher::searchImage(SearchRequest &request)
     std::unordered_map<u_int32_t, list<Hit> > imageReqHits; // key: visual word, value: the found angles
     for (unsigned i = 0; i < keypoints.size(); ++i)
     {
-        #define NB_NEIGHBORS 1
+        #define NB_NEIGHBORS 30
 
         vector<int> indices(NB_NEIGHBORS);
         vector<int> dists(NB_NEIGHBORS);
