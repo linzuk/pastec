@@ -264,7 +264,7 @@ void RequestHandler::handleRequest(ConnectionInfo &conInfo)
                 i_ret = index->clear();
             else
                 i_ret = MISFORMATTED_REQUEST;
-        }
+        } 
 
         ret["type"] = Converter::codeToString(i_ret);
     }
@@ -315,6 +315,12 @@ void RequestHandler::handleRequest(ConnectionInfo &conInfo)
              && conInfo.connectionType == DELETE)
     {
         i_ret = indexCol->removeIndex(parsedURI[1]);
+        ret["type"] = Converter::codeToString(i_ret);
+    }
+    else if (testURIWithPattern(parsedURI, p_indexes)
+             && conInfo.connectionType == GET) {
+        Index *index;
+        i_ret = indexCol->get(parsedURI[1], &index);
         ret["type"] = Converter::codeToString(i_ret);
     }
     else
