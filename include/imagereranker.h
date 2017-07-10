@@ -80,7 +80,7 @@ struct Histogram
 };
 
 
-#define RANSAC_MIN_INLINERS 12
+#define RANSAC_MIN_INLINERS 0
 
 
 class RANSACThread : public Thread
