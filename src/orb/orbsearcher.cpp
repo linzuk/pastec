@@ -286,7 +286,7 @@ u_int32_t ORBSearcher::processSimilar(SearchRequest &request,
     cout << "time: " << getTimeDiff(t[5], t[6]) << " ms." << endl;
     cout << "Returning the results. " << endl;
 
-    returnResults(rerankedResults, request, 100);
+    returnResults(rerankedResults, request, 30);
 
     return SEARCH_RESULTS;
 }
