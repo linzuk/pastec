@@ -280,6 +280,8 @@ u_int32_t ORBSearcher::processSimilar(SearchRequest &request,
     reranker.rerank(imageReqHits, indexHits,
                     rankedResults, rerankedResults, 300);
 
+    cout << "Before rerank " << rankedResults.size() << " after rerank " << rerankedResults.size() << endl;
+
     gettimeofday(&t[6], NULL);
     cout << "time: " << getTimeDiff(t[5], t[6]) << " ms." << endl;
     cout << "Returning the results. " << endl;
