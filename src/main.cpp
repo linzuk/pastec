@@ -116,7 +116,7 @@ int main(int argc, char** argv)
     RequestHandler *rh = new RequestHandler(ife, is, indexCol, authKey);
     s = new HTTPServer(rh, i_port, https);
 
-    signal(SIGHUP, intHandler);
+    //signal(SIGHUP, intHandler);
     signal(SIGINT, intHandler);
 
     s->run();
